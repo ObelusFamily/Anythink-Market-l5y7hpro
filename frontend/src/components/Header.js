@@ -2,6 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/topbar_logo.png";
 
+//functional component
+
+
 const LoggedOutView = () => {
   return (
     <ul className="navbar-nav ml-auto">
@@ -19,6 +22,9 @@ const LoggedOutView = () => {
     </ul>
   );
 };
+//functional component
+
+
 
 const LoggedInView = (props) => {
   return (
@@ -48,6 +54,10 @@ const LoggedInView = (props) => {
     </ul>
   );
 };
+
+//functional component
+
+
 
 class Header extends React.Component {
   render() {
