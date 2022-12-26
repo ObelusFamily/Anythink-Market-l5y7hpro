@@ -2,9 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../imgs/topbar_logo.png";
 
-//functional component
-
-
 const LoggedOutView = () => {
   return (
     <ul className="navbar-nav ml-auto">
@@ -22,9 +19,6 @@ const LoggedOutView = () => {
     </ul>
   );
 };
-//functional component
-
-
 
 const LoggedInView = (props) => {
   return (
@@ -57,27 +51,44 @@ const LoggedInView = (props) => {
 
 //functional component
 
+function Header(props) {
+  return<>
+          <nav
+              className="navbar navbar-expand-md navbar-dark"
+              style={{ padding: "0.5rem 2rem" }}
+            >
+              <Link to="/" className="navbar-brand">
+                <img alt="logo" src={logo} />
+              </Link>
 
-
-class Header extends React.Component {
-  render() {
-    return (
-      <nav
-        className="navbar navbar-expand-md navbar-dark"
-        style={{ padding: "0.5rem 2rem" }}
-      >
-        <Link to="/" className="navbar-brand">
-          <img alt="logo" src={logo} />
-        </Link>
-
-        {this.props.currentUser ? (
-          <LoggedInView currentUser={this.props.currentUser} />
-        ) : (
-          <LoggedOutView currentUser={this.props.currentUser} />
-        )}
-      </nav>
-    );
-  }
+              {props.currentUser ? (
+                <LoggedInView currentUser={props.currentUser} />
+              ) : (
+                <LoggedOutView currentUser={props.currentUser} />
+              )}
+          </nav>
+        </>
 }
+
+// class Header extends React.Component {
+//   render() {
+//     return (
+//       <nav
+//         className="navbar navbar-expand-md navbar-dark"
+//         style={{ padding: "0.5rem 2rem" }}
+//       >
+//         <Link to="/" className="navbar-brand">
+//           <img alt="logo" src={logo} />
+//         </Link>
+
+//         {this.props.currentUser ? (
+//           <LoggedInView currentUser={this.props.currentUser} />
+//         ) : (
+//           <LoggedOutView currentUser={this.props.currentUser} />
+//         )}
+//       </nav>
+//     );
+//   }
+// }
 
 export default Header;
